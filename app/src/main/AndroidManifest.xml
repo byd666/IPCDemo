@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.byd.test">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.byd.test.permission.ACCESS_BOOK_SERVICE"/>
+    <permission android:name="com.byd.test.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:sharedUserId="android.uid.system"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.byd.test.activity.MainActivity"></activity>
+        <activity
+            android:name="com.byd.test.activity.SecondActivity"
+            android:process="com.byd.text.remote" />
+        <activity android:name="com.byd.test.activity.MessengerActivity">
+        </activity>
+
+        <activity android:name="com.byd.test.activity.UserManagerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name="com.byd.test.service.MessengerService"
+            android:process=":messenger" />
+        <service
+            android:name="com.byd.test.service.UserManagerService"
+            android:process=":user_aidl" />
+
+    </application>
+
+</manifest>
