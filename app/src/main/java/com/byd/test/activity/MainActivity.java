@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         new Thread(new Runnable() {
             @Override
             public void run() {
-                User user=new User("1","james");
+                User user=new User(1,"james");
                 File dir=new File(MyContstants.CACHE_File_PATH);
                 if(!dir.exists()){
                     dir.mkdirs();

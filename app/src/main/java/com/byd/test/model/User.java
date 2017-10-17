@@ -9,34 +9,35 @@ import java.io.Serializable;
 public class User implements Serializable{
     private static final long serialVersionUID=516234562142136451L;
 
-    public String userId;
-    private String usereName;
-    public User(String userId, String usereName) {
+    public int  userId;
+    public String userName;
+    public User(){}
+    public User(int userId, String userName) {
         this.userId = userId;
-        this.usereName = usereName;
+        this.userName = userName;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
     public String getUsereName() {
-        return usereName;
+        return userName;
     }
 
     public void setUsereName(String usereName) {
-        this.usereName = usereName;
+        this.userName = userName;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "userId='" + userId + '\'' +
-                ", usereName='" + usereName + '\'' +
+                ", usereName='" + userName + '\'' +
                 '}';
     }
 }

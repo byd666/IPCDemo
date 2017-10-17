@@ -11,7 +11,9 @@ import android.os.Parcelable;
 public class User implements Parcelable{
     public int bookId;
     public String bookName;
+    public User(){
 
+    }
     public User(int bookId, String bookName) {
         this.bookId = bookId;
         this.bookName = bookName;
