@@ -1,0 +1,1 @@
+关于进程间通信的一个综合性的Demo，分别使用了文件共享，Messenger，AIDL，ContentProvider，以及Socket是实现进程间通信
