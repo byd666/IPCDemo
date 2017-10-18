@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="com.byd.test.permission.ACCESS_BOOK_SERVICE" />
     <uses-permission android:name="com.byd.test.permission.PROVIDER" />
 
@@ -28,12 +27,14 @@
         <activity
             android:name=".activity.SecondActivity"
             android:process="com.byd.text.remote" />
-        <activity android:name=".activity.MessengerActivity"></activity>
-        <activity android:name=".activity.UserManagerActivity">
-        </activity>
+        <activity android:name=".activity.MessengerActivity" />
+        <activity android:name=".activity.UserManagerActivity"></activity>
         <activity android:name=".activity.ProviderActivity">
+        </activity>
+        <activity android:name=".activity.TCPClientActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -43,14 +44,13 @@
         <service
             android:name=".service.UserManagerService"
             android:process=":user_aidl" />
-
+        <service android:name=".service.TCPServerService"
+            android:process=":tcp_server"/>
         <provider
             android:name=".provider.UserProvider"
             android:authorities="com.byd.test.provider"
             android:permission="com.byd.test.permission.PROVIDER"
             android:process=":provider" />
-
-
     </application>
 
 </manifest>

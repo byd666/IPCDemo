@@ -29,6 +29,5 @@ public class ProviderActivity extends AppCompatActivity {
             Log.e(TAG,user.toString());
         }
        cursor.close();
-
     }
 }
